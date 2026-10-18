@@ -1,14 +1,14 @@
-title: "MealMind — AI Meal Planner powered by Strands Decider 2B"
+title: "MealMind — AI Meal Planner powered by Strands Decider"
 pitch: "Tell MealMind what you have, your budget and time — it picks the best meal and explains why."
 features:
-  - "Ask for meals by ingredients, budget, time, and dietary needs"
-  - "Strands Decider 2B evaluates every candidate meal before it is recommended"
+  - "Ask for meals by ingredients, budget in rupees, time, and dietary needs"
+  - "Strands Decider evaluates every candidate meal before it is recommended"
   - "Partial fits are shown with a caveat; unsuitable meals are silently skipped"
   - "Get full recipe steps, cost breakdown, or nutrition info for any suggestion"
   - "Runs on Amazon Bedrock AgentCore Runtime"
 eager: false
-intro: "MealMind is an AI meal planner that runs on Amazon Bedrock. Before recommending any meal, it uses Strands Decider 2B to check whether the meal actually fits your ingredients, budget, time, and dietary needs — not just guessing."
-intro_normal: "MealMind runs on Amazon Bedrock AgentCore Runtime. Strands Decider 2B evaluates every candidate meal against your constraints before MealMind recommends it."
+intro: "MealMind is an AI meal planner that runs on Amazon Bedrock. Before recommending any meal, it uses Strands Decider to check whether the meal actually fits your ingredients, budget, time, and dietary needs."
+intro_normal: "MealMind runs on Amazon Bedrock AgentCore Runtime. Strands Decider evaluates every candidate meal against your constraints before MealMind recommends it."
 turns:
   - say: "I have rice, eggs, onion, soy sauce, and carrot. My budget is ₹400, I have 25 minutes, and I'm vegetarian."
     narrate: "The user lists what they have. The Decider evaluates each candidate meal before any recommendation is made."

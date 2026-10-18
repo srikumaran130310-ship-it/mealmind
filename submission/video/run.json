@@ -1,75 +1,151 @@
 [
  {
-  "start": 1.8564388751983643,
-  "end": 18.861212015151978,
+  "start": 5.180803298950195,
+  "end": 62.140655517578125,
   "out": {
-   "reply": "Please provide the order ID for the headphones so I can process your refund.",
+   "reply": "Based on your preferences (**vegetarian**, \u20b9400 budget, 25 minutes), the only excellent fit is **Vegetable Fried Rice**. The other options are blocked because they conflict with your vegetarian requirement or ingredient list.\n\nHere are the steps to make a delicious and nutritious **Vegetable Fried Rice**:\n\n1.  **Cook & Cool Rice:** Cook your rice in a pot or microwave it, then let it cool down completely (this gives it that perfect fluffy texture).\n2.  **Scramble Eggs:** Beat your eggs lightly and scramble them in a large wok over medium heat until set. Remove from the pan.\n3.  **Stir-Fry Veggies:** In the same pan with a little oil, fry down your carrots and onions until they are soft and caramelized.\n4.  **Combine:** Add the cooled rice, scrambled eggs, and soy sauce to the wok. Give it a vigorous toss so everything heats through and mixes well.\n5.  **Serve Hot:** Your meal is ready! It\u2019s packed with protein (from the eggs) and takes under 20 minutes.\n\nWould you like to see the exact cost breakdown or the nutritional highlights (calories/protein/fat) next?",
    "decisions": [
     {
-     "pattern": "#guardrails",
-     "tool": "refund_order",
-     "args": {
-      "amount": 249.0,
-      "order_id": "A1002"
-     },
-     "args_grounded": 0.437,
-     "explicit_request": 0.791,
-     "premature": 0.235,
-     "decider_ms": 3075,
-     "verdict": "guide"
-    }
-   ],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 6970,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
-  },
-  "say": "My headphones are broken, I want my money back.",
-  "narrate": "The customer wants a refund but never says which order."
- },
- {
-  "start": 18.861226797103882,
-  "end": 28.287545919418335,
-  "out": {
-   "reply": "Your refund for order A1002 has been processed. You will receive 249.0 back to your original payment method. If you have any further questions, feel free to ask.",
-   "decisions": [
+     "pattern": "#policy",
+     "meal": "Vegetable Fried Rice",
+     "meal_fits_ingredients": 0.697,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.729,
+     "dietary_safe": 0.79,
+     "verdict": "allow",
+     "decider_ms": 4258
+    },
     {
-     "pattern": "#guardrails",
-     "tool": "refund_order",
-     "args": {
-      "amount": 249,
-      "order_id": "A1002"
-     },
-     "args_grounded": 0.608,
-     "explicit_request": 0.894,
-     "premature": 0.128,
-     "decider_ms": 3894,
-     "verdict": "proceed"
+     "pattern": "#policy",
+     "meal": "Chicken Stir Fry",
+     "meal_fits_ingredients": 0.57,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.661,
+     "dietary_safe": 0.365,
+     "verdict": "block",
+     "decider_ms": 3646
+    },
+    {
+     "pattern": "#policy",
+     "meal": "Paneer Bhurji",
+     "meal_fits_ingredients": 0.538,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.616,
+     "dietary_safe": 0.576,
+     "verdict": "block",
+     "decider_ms": 4042
     }
    ],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 5813,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
+   "model_id": "qwen3.5-4b",
+   "latency_ms": 50807,
+   "agent": "MealMind \u2014 AI Meal Planner",
+   "eager": false
   },
-  "say": "It's order A1002, refund the full amount please.",
-  "narrate": "Now the customer gives the order id and asks for the refund explicitly."
+  "say": "I have rice, eggs, onion, soy sauce, and carrot. My budget is \u00e2\u201a\u00b9400, I have 25 minutes, and I'm vegetarian.",
+  "narrate": "The user lists what they have. The Decider evaluates each candidate meal before any recommendation is made."
  },
  {
-  "start": 28.287585020065308,
-  "end": 32.838441133499146,
+  "start": 62.140663146972656,
+  "end": 98.92883157730103,
   "out": {
-   "reply": "Once an order has shipped, it cannot be cancelled. However, you can still request a refund after receiving the item. If you have any further questions, feel free to ask.",
+   "reply": "Here are the simple steps to make a delicious **Vegetable Fried Rice** using your ingredients:\n\n1.  **Cook & Cool Rice:** Cook your rice and let it cool down completely (or refrigerate it for an hour). This helps it get that perfect fluffy texture!\n2.  **Scramble Eggs:** Beat your eggs and scramble them in a hot pan until set, then set them aside on a side plate.\n3.  **Stir-Fry Veggies:** In the same pan (which will be hot), saut\u00e9 your carrots and onion until they are soft but still slightly crisp.\n4.  **Combine Everything:** Add the cooled rice to the pan with the veggies and eggs, then pour in the soy sauce. Give it a good toss to mix everything together so the flavors meld.\n5.  **Serve Hot:** Transfer to your plate immediately! It\u2019s ready to eat in about 20 minutes total.\n\nWould you like to see the exact cost estimation or nutritional highlights (calories, protein, fat) next?",
    "decisions": [],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 940,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
+   "model_id": "qwen3.5-4b",
+   "latency_ms": 33424,
+   "agent": "MealMind \u2014 AI Meal Planner",
+   "eager": false
   },
-  "say": "Is it possible to cancel an order after it ships?",
-  "narrate": "This one is a question, not a request to act."
+  "say": "What are the steps for making the first one?",
+  "narrate": "The user asks for the recipe. No decision is needed here \u00e2\u20ac\u201d this is a straightforward lookup."
+ },
+ {
+  "start": 98.92883729934692,
+  "end": 147.1025049686432,
+  "out": {
+   "reply": "Perfect! Given your ingredients (**bread** and **cheese**), budget, time, and dietary needs, the **Grilled Cheese Sandwich** is the clear winner. It's vegetarian, quick, and fits your budget effortlessly.\n\nHere are the steps to make it:\n\n1.  **Prepare the bread:** Take two slices of bread. On one slice, butter one side; on the other slice, butter the opposite side.\n2.  **Assemble:** Place the first slice (buttered side down) on a skillet or toaster oven pan. Top with cheese and then the second slice (buttered side down).\n3.  **Cook:** Cook over medium heat for about 2-3 minutes per side until golden brown and crispy.\n4.  **Serve:** Let it cool for a minute or two before breaking it in half and enjoying!\n\nWould you like to see the nutritional breakdown (calories, protein) or confirm the cost estimate next?",
+   "decisions": [
+    {
+     "pattern": "#policy",
+     "meal": "Grilled Cheese Sandwich",
+     "meal_fits_ingredients": 0.653,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.721,
+     "dietary_safe": 0.767,
+     "verdict": "allow",
+     "decider_ms": 3578
+    },
+    {
+     "pattern": "#policy",
+     "meal": "Scrambled Eggs on Toast",
+     "meal_fits_ingredients": 0.527,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.587,
+     "dietary_safe": 0.6,
+     "verdict": "block",
+     "decider_ms": 3637
+    },
+    {
+     "pattern": "#policy",
+     "meal": "Beef Tacos",
+     "meal_fits_ingredients": 0.421,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.489,
+     "dietary_safe": 0.324,
+     "verdict": "block",
+     "decider_ms": 3792
+    }
+   ],
+   "model_id": "qwen3.5-4b",
+   "latency_ms": 43711,
+   "agent": "MealMind \u2014 AI Meal Planner",
+   "eager": false
+  },
+  "say": "I only have bread and cheese, \u00e2\u201a\u00b9250, 10 minutes. I'm vegetarian.",
+  "narrate": "A simpler request \u00e2\u20ac\u201d fewer ingredients, tight budget. The Decider checks what fits."
+ },
+ {
+  "start": 147.10251665115356,
+  "end": 186.73584985733032,
+  "out": {
+   "reply": "Based on the latest system update, all available meal options are currently **BLOCKED**. Since there are no approved meals to recommend, I cannot share nutritional data for the Grilled Cheese Sandwich at this moment\u2014the system treats your current preferences as incompatible with existing recipes.\n\nThis often happens if a new restriction pops up (like needing to be Glfree while still having bread). Let\u2019s fix it! If you tell me:\n*   **Any hidden dietary rule** that just came up?  \n*   Or prefer meals **without** bread?  \nI\u2019ll instantly find you the perfect next dish again! \ud83c\udf7d\ufe0f",
+   "decisions": [
+    {
+     "pattern": "#policy",
+     "meal": "Grilled Cheese Sandwich",
+     "meal_fits_ingredients": 0.602,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.556,
+     "dietary_safe": 0.485,
+     "verdict": "block",
+     "decider_ms": 3485
+    },
+    {
+     "pattern": "#policy",
+     "meal": "Beef Tacos",
+     "meal_fits_ingredients": 0.441,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.413,
+     "dietary_safe": 0.336,
+     "verdict": "block",
+     "decider_ms": 3771
+    },
+    {
+     "pattern": "#policy",
+     "meal": "Paneer Bhurji",
+     "meal_fits_ingredients": 0.543,
+     "meal_fits_constraints": "great_fit",
+     "meal_fits_constraints_conf": 0.49,
+     "dietary_safe": 0.689,
+     "verdict": "block",
+     "decider_ms": 3867
+    }
+   ],
+   "model_id": "qwen3.5-4b",
+   "latency_ms": 34447,
+   "agent": "MealMind \u2014 AI Meal Planner",
+   "eager": false
+  },
+  "say": "Is the grilled cheese sandwich gluten-free? And how many calories does it have?",
+  "narrate": "The user asks about nutrition and dietary info for their chosen meal."
  }
 ]

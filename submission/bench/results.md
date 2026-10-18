@@ -8,3 +8,5 @@
 | Accuracy when confident | 93.8% | 95.8% |
 
 At the median the decider was 4.3x faster than the LLM.
+
+Questions evaluated: meal_fits_ingredients (noul), dietary_safe (noul)
