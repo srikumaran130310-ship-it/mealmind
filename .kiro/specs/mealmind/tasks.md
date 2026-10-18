@@ -1,0 +1,22 @@
+# MealMind Tasks
+
+- [x] Write requirements.md
+- [x] Write design.md
+- [x] Write agent/AGENT.md
+- [x] Write agent/decision.py (MealSuitabilityGuard, PATTERN_TAG=#policy, QUESTIONS)
+- [x] Write agent/tools.py (get_meal_suggestions, get_recipe_steps, estimate_cost, get_nutritional_info)
+- [x] Write agent/agent.py (HackathonAgent.chat with pre-agent Decider evaluation)
+- [x] Generate agent/data/meals.json (20 synthetic meals)
+- [x] Write agent/eval_cases.jsonl (24 cases, 12 tune / 12 test)
+- [x] Write agent/demo_script.yaml (4 turns, neutral narration)
+- [x] Write agent/features.yaml
+- [x] All contract tests pass (21/21)
+- [ ] Run ./kit bench --split tune and tune questions if needed
+- [ ] Run ./kit bench --split test and record results
+- [ ] AWS credentials configured → run ./kit setup
+- [ ] Run ./kit run to verify a real conversation
+- [ ] Start demo with ./kit demo-bg and test http://localhost:8501
+- [ ] Run ./kit deploy to deploy to Amazon Bedrock AgentCore Runtime
+- [ ] Write article with ./kit article
+- [ ] Record video with ./kit video --target agentcore
+- [ ] Publish with ./kit publish <repo>
