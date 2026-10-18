@@ -1,0 +1,18 @@
+# Amazon Bedrock AgentCore features for MealMind.
+# Memory is enabled so the agent remembers dietary preferences across sessions.
+# Gateway is not used (all tools are local).
+
+memory:
+  enabled: false          # Set to true after deploying with ./kit deploy to enable cross-session memory
+  name: agentmemory
+  strategies: [USER_PREFERENCE, SEMANTIC]
+  expiry_days: 30
+
+gateway:
+  enabled: false
+  name: tools
+  authorizer: AWS_IAM
+  targets:
+    - name: websearch
+      type: connector
+      connector: web-search
